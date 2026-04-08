@@ -85,15 +85,15 @@ The pipeline ran end-to-end and produced CIFAR-10 curves for Margin, and TPC$_{D
 
 \begin{table}[H]
 \centering
-\caption{Summary of paper and reproduced trends.}
+\caption{Paper expectation and reproduced accuracy difference (\%).}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{lll}
+\begin{tabular}{lrrrr}
 \toprule
-Method & Paper trend & Our result \\
+Method & Paper & 20 & 50 & 1000 \\
 \midrule
-No AL & Baseline reference & Baseline reference \\
-Margin & Weak early & Mixed; strongest at 20 labels \\
-TPC$_{DC}$ & Strong early gain & Mixed; strongest at 1000 labels \\
+No AL & Baseline & 0.00 & 0.00 & 0.00 \\
+Margin & Weak early & 2.44 & -3.45 & 1.39 \\
+TPC$_{DC}$ & Strong early gain & -1.75 & 0.84 & 3.16 \\
 \bottomrule
 \end{tabular}}
 \end{table}
