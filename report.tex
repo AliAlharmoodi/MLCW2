@@ -83,6 +83,21 @@ This reduces repeated within-cluster nearest-neighbour computation while trying 
 \section{Results and Statistical Analysis}
 The pipeline ran end-to-end and produced CIFAR-10 curves for Margin, and TPC$_{DC}$. The reproduction did not fully match the paper: Margin was best at 20 labels ($+2.44$ over baseline), while TPC$_{DC}$ was negative there ($-1.75$). TPC$_{DC}$ became slightly positive at 50 labels ($+0.84$) and clearly positive at 1000 labels ($+3.16$), but remained below baseline at 100, 200, and 500 labels. These results show a working implementation, but not the strong low-budget TPC$_{DC}$ advantage reported in the paper.
 
+\begin{table}[H]
+\centering
+\caption{Summary of paper and reproduced trends.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lll}
+\toprule
+Method & Paper trend & Our result \\
+\midrule
+No AL & Baseline reference & Baseline reference \\
+Margin & Weak early & Mixed; strongest at 20 labels \\
+TPC$_{DC}$ & Strong early gain & Mixed; strongest at 1000 labels \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 \section{Plots}
 The key plot in the paper shows \emph{accuracy difference} relative to the random baseline as a function of the number of labelled examples. This visualises the phase-transition argument directly. At small budgets, the TPC$_{DC}$ curve is above the random and margin baselines, indicating that typicality-based selection is beneficial early. As the budget increases, this advantage decreases.
 
